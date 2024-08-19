@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 //Solo para ejecutar mi feature
 //@CucumberOptions(features="src/test/java/feature/alert.feature",
 //@CucumberOptions(features="src/test/java/feature/windowHandleSelenium.feature",
-@CucumberOptions(features="src/test/java/feature/excel.feature",
+@CucumberOptions(features="src/test/java/feature/windowHandleSelenium.feature",
         glue = "stepDefinition")
 public class TestRunner extends AbstractTestNGCucumberTests {
 

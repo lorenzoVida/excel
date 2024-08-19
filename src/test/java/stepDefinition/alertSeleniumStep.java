@@ -1,13 +1,15 @@
 package stepDefinition;
 
+import com.google.common.io.Files;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.io.File;
+import java.io.IOException;
 
 public class alertSeleniumStep {
     String app="https://omayo.blogspot.com/";
@@ -30,9 +32,10 @@ public class alertSeleniumStep {
     Thread.sleep(2000);
     }
     @Then("show window alert and capture text")
-    public void show_window_alert_and_capture_text() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void show_window_alert_and_capture_text() throws IOException {
+        WebElement we = driver.findElement(By.id("multiselect1"));
+        File f = we.getScreenshotAs(OutputType.FILE);
+        Files.copy(f,new File("D:\\workSpaceEjemplo\\Clase5-main\\src\\main\\java\\screeShot\\screenPartial.jpg"));
     }
 
 }
